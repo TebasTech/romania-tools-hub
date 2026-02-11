@@ -1,30 +1,30 @@
 import { useState } from "react";
 import { AppSidebar } from "@/components/AppSidebar";
-import { DashboardPage } from "@/components/pages/DashboardPage";
 import { FinancePage } from "@/components/pages/FinancePage";
-import { CalculatorPage } from "@/components/pages/CalculatorPage";
-import { PercentagePage } from "@/components/pages/PercentagePage";
-import { DateCalcPage } from "@/components/pages/DateCalcPage";
-import { BMIPage } from "@/components/pages/BMIPage";
-import { UnitConverterPage } from "@/components/pages/UnitConverterPage";
+import { DashboardPage } from "@/components/pages/DashboardPage";
+import { NetSalaryPage } from "@/components/pages/NetSalaryPage";
+import { GrossSalaryPage } from "@/components/pages/GrossSalaryPage";
+import { PensionPage } from "@/components/pages/PensionPage";
+import { BenefitsPage } from "@/components/pages/BenefitsPage";
 import { FuelPage } from "@/components/pages/FuelPage";
-import { TimeConverterPage } from "@/components/pages/TimeConverterPage";
+import { CurrencyPage } from "@/components/pages/CurrencyPage";
+import { NewsPage } from "@/components/pages/NewsPage";
 
 const pages: Record<string, React.FC> = {
-  dashboard: DashboardPage,
   finance: FinancePage,
-  calculator: CalculatorPage,
-  percentage: PercentagePage,
-  date: DateCalcPage,
-  bmi: BMIPage,
-  unit: UnitConverterPage,
+  dashboard: DashboardPage,
+  "net-salary": NetSalaryPage,
+  "gross-salary": GrossSalaryPage,
+  pension: PensionPage,
+  benefits: BenefitsPage,
   fuel: FuelPage,
-  time: TimeConverterPage,
+  currency: CurrencyPage,
+  news: NewsPage,
 };
 
 const Index = () => {
-  const [activePage, setActivePage] = useState("dashboard");
-  const ActiveComponent = pages[activePage] || DashboardPage;
+  const [activePage, setActivePage] = useState("finance");
+  const ActiveComponent = pages[activePage] || FinancePage;
 
   return (
     <div className="flex min-h-screen bg-background">
